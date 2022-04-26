@@ -12,4 +12,15 @@ RSpec.describe Competition, type: :model do
     it { should have_many(:teams).through(:competition_teams) }
     it { should have_many(:players).through(:teams) }
   end
+
+  describe "class methods" do
+    it "displays average age of players in a competition" do
+      player1 = team1.players.create!(name: "Joe", age: 23)
+      player2 = team1.players.create!(name: "Sam", age: 15)
+      player3 = team2.players.create!(name: "Mike", age: 22)
+      player4 = team3.players.create!(name: "Mia", age: 40)
+
+      expect(competition.avg_player_age).to eq(25)
+    end
+  end
 end
