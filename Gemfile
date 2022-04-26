@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.4'
+ruby '2.7.5'
 
 gem 'rails', '~> 5.2.6'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -17,6 +17,7 @@ group :development, :test do
   gem 'launchy'
   gem 'capybara'
   gem 'shoulda-matchers'
+  gem 'orderly'
 end
 
 group :development do
