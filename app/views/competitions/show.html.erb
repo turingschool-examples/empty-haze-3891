@@ -1,0 +1,14 @@
+<h1><%= "#{@competition.name}" %></h1>
+
+<div id="competition-info">
+  <p>Location: <%="#{@competition.location}"%></p>
+  <p>Sport: <%="#{@competition.sport}" %></p>
+</div>
+
+<div id="team-info">
+  <h2>All Teams</h2>
+  <% @competition.teams.each do |team| %>
+    <p>Team name: <%= team.nickname %></p>
+    <p>Team hometown: <%= team.hometown %></p>
+  <% end %>
+</div>
