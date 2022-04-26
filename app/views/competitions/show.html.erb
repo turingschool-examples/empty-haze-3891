@@ -1,0 +1,10 @@
+<h1><%= @competition.name %></h1>
+<h3><%= @competition.location %></h3>
+<h3><%= @competition.sport %></h3>
+
+<h1>Compeating Teams</h1><% @competition.teams.each do |team| %>
+  <h3><%= team.nickname %></h3>
+  <h3><%= team.hometown %></h3>
+<% end %>
+
+<h1>Average Age of all Athletes: <%= @competition.avg_age %><h1>
