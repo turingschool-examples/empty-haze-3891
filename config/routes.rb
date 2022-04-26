@@ -9,3 +9,11 @@ get "/teams", to: "teams#index"
 # resources :competitions, only: [:show, :index]
 
 end
+
+get "/competition", to: "competitions#index"
+get "/competition/:id", to: "competitions#show"
+
+get "/teams". to: "teams@#index"
+get '/teams/new', to: 'teams#new'
+get '/teams/:id', to: 'teams#show'
+post '/teams', to: 'teams#create'

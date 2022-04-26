@@ -5,4 +5,12 @@ class Team < ApplicationRecord
 
   validates_presence_of :hometown
   validates_presence_of :nickname
-end
+
+  def average_age
+     players.average("age").to_i
+   end
+
+   def self.age_ordered
+     order("average_age DESC")
+   end
+ end
