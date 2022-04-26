@@ -1,0 +1,8 @@
+<h2>Registration Form</h2>
+
+<%= form_with url: new_competition_path, local: true do |f| %>
+  <%= f.hidden_field :competition_id, value: @competition.id %>
+  <%= f.label :team_id %>
+  <%= f.text_field :team_id %>
+  <%= f.submit :submit %>
+<% end %>
