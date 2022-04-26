@@ -1,3 +1,4 @@
+
 []class TeamsController < ApplicationController
   def index
     @teams = Team.age_ordered
@@ -19,4 +20,4 @@
       def team_params
         params.permit(:hometown, :nickname)
       end
-end
+

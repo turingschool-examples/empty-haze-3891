@@ -1,5 +1,6 @@
 
 
+
 require 'rails_helper'
 
 describe 'competitions index' do
@@ -19,4 +20,4 @@ describe 'competitions index' do
       end
     end
   end
-end
+
