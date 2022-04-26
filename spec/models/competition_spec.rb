@@ -1,16 +1,17 @@
 require 'rails_helper'
 
-describe Team, type: :model do
+describe Competition, type: :model do
+
   describe 'validations' do
-    it { should validate_presence_of :nickname }
-    it { should validate_presence_of :hometown }
+    it { should validate_presence_of :name }
+    it { should validate_presence_of :location }
+    it { should validate_presence_of :sport }
   end
 
-
   describe 'relationships' do
-    it { should have_many :players }
     it { should have_many :team_competitions }
-    it { should have_many(:competitions).through(:team_competitions ) }
+    it { should have_many(:teams).through(:team_competitions ) }
+    it { should have_many(:players).through(:teams ) }
   end
 
   describe 'methods' do
@@ -83,10 +84,8 @@ describe Team, type: :model do
     end
 
     it '#avg_player_age' do
-      expect(@team_1.avg_player_age).to eq(21)
-      expect(@team_2.avg_player_age).to eq(26)
-      expect(@team_3.avg_player_age).to eq(36)
-      expect(@team_4.avg_player_age).to eq(28)
+      expect(@comp_1.avg_player_age).to eq(27)
+      expect(@comp_2.avg_player_age).to eq(27)
     end
   end
 end

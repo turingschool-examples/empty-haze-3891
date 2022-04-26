@@ -1,0 +1,10 @@
+<h1>Competitions:<h1>
+<hr>
+
+  <div id="competitions">
+    <% @competitions.each do |comp| %>
+      <div id="competition-<%= comp.id %>">
+        <h4><%= link_to "#{comp.name}", competitions_path(comp.id) %></h4>
+      </div>
+    <% end %>
+  </div>
