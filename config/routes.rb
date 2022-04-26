@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   get '/competitions', to: 'competitions#index'
   get '/competitions/:id', to: 'competitions#show'
+  get '/competitions/:id/edit', to: 'competitions#edit'
 end

@@ -54,5 +54,26 @@ RSpec.describe 'Competition Show Page' do
       visit "/competitions/#{competition_1.id}"
       expect(page).to have_content("Player Average Age: 3")
     end
+
+    it 'displays link to register a new team' do
+      competition_1 = Competition.create!(name: 'Flight Fest', location: 'San Diego', sport: 'Basketball')
+      competition_2 = Competition.create!(name: 'Jump City', location: 'Brooklyn', sport: 'Basketball')
+      team_1 = competition_1.teams.create!(nickname: 'Mild', hometown: 'Detroit')
+      team_2 = competition_1.teams.create!(nickname: 'Hot', hometown: 'Atlanta')
+      team_3 = competition_2.teams.create!(nickname: 'Spicy', hometown: 'Seattle')
+      team_4 = competition_2.teams.create!(nickname: 'Fire', hometown: 'Humbolt')
+      andrew = team_1.players.create!(name: "Andrew", age: 1)
+      tom = team_1.players.create!(name: "Tom", age: 2)
+      jerry = team_1.players.create!(name: "Jerry", age: 6)
+      hank = team_2.players.create!(name: "Hank", age: 1)
+      peter = team_2.players.create!(name: "Peter", age: 2)
+      lommy = team_2.players.create!(name: "Lommy", age: 6)
+      zach = team_3.players.create!(name: "Zach", age: 200)
+      rookie = team_4.players.create!(name: "Rookie", age: 600)
+
+      visit "/competitions/#{competition_1.id}"
+      click_link 'Register New Team'
+      expect(current_path).to eq("/competitions/#{competition_1.id}/edit")
+    end
   end
 end
