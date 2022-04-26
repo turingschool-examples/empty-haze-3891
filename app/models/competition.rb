@@ -5,4 +5,11 @@ class Competition < ApplicationRecord
   validates_presence_of :name
   validates_presence_of :location
   validates_presence_of :sport
+
+  def average_age
+     players.average("age").to_i
+   end
+
+
+
 end

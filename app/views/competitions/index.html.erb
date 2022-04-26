@@ -1,0 +1,7 @@
+<h1>List of Competitions</h1>
+
+<% @competitions.each do |competition| %>
+  <section id="competitions">
+    <p><%= link_to competition.name, "/competitions/#{@competiion.id}"%></p>
+  </section>
+<% end %>
