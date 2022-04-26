@@ -1,0 +1,7 @@
+<h1>Competitions List Page</h1>
+
+<% @competitions.each do |competition| %>
+<div id="competition-"<%= competition.id %>>
+  <p>Competition Name: <%= link_to competition.name, "/competitions/#{competition.id}" %></p>
+</div>
+<% end %>
